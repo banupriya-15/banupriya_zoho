@@ -1,0 +1,37 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+class Pattern
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		
+		String patternString;
+		Scanner sc=new Scanner(System.in);
+		patternString=sc.next();
+		int iterator1,iterator2;
+		int lengthOfString=patternString.length();
+		int center=lengthOfString/2;
+		int main_center=center;
+		for(iterator1=0;iterator1<lengthOfString;iterator1++)
+		{
+		    center=main_center;
+		    for(iterator2=0;iterator2<lengthOfString-iterator1-1;iterator2++)
+		    {
+		        System.out.print(" ");
+		    }
+		    for(iterator2=0;iterator2<=iterator1;iterator2++)
+		    {
+		        System.out.print(patternString.charAt(center));
+		        center+=1;
+		        if(center>=lengthOfString)
+		        {
+		            center=0;
+		        }
+		    }
+		    System.out.println();
+		}
+	}
+}
